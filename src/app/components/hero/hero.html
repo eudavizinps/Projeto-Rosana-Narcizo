@@ -4,7 +4,7 @@
       <span class="eyebrow">{{ slides[current()].eyebrow }}</span>
       <h1>{{ slides[current()].title }}</h1>
       <p>{{ slides[current()].description }}</p>
-      <div class="hero-actions"><a class="button" href="#orcamento">Agendar agora <span>→</span></a><a class="button button-outline" href="#contato">Fale conosco <span>◌</span></a></div>
+      <div class="hero-actions"><a class="button" href="#orcamento">Agendar agora <span>→</span></a><a class="button button-outline" href="https://wa.me/5511979989790" target="_blank" rel="noopener noreferrer" aria-label="Falar conosco pelo WhatsApp no número 11 97998-9790">Fale conosco <span>◌</span></a></div>
       <div class="carousel-controls" aria-label="Controles do carrossel">
         <button type="button" (click)="previous()" aria-label="Slide anterior">←</button>
         <div class="dots">@for (slide of slides; track slide.title; let index = $index) {<button type="button" [class.active]="index === current()" (click)="goTo(index)" [attr.aria-label]="'Ir para slide ' + (index + 1)"></button>}</div>

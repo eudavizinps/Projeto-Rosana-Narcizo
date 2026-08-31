@@ -1,6 +1,6 @@
 # Rosana Narcizo — frontend Angular
 
-Página inicial responsiva de Rosana Narcizo, criada em Angular 22, TypeScript, HTML5 e SCSS. Esta primeira etapa é exclusivamente visual: orçamento, agenda, pagamentos, contato e depoimentos usam dados demonstrativos e não enviam informações para nenhum serviço externo.
+Página inicial responsiva de Rosana Narcizo, criada em Angular 22, TypeScript, HTML5 e SCSS. Esta primeira etapa é predominantemente visual: orçamento, agenda, pagamentos e depoimentos usam dados demonstrativos; os links de contato abrem uma conversa externa no WhatsApp.
 
 ## Requisitos
 
@@ -44,4 +44,4 @@ O resultado otimizado é gravado em `dist/rosana-narcizo/browser/`.
 
 ## Escopo desta etapa
 
-Não há backend, autenticação, banco de dados, pagamentos, WhatsApp real, IA ou integração de agenda. O sinal exibido no orçamento é sempre 20%.
+Não há backend, autenticação, banco de dados, pagamentos, IA ou integração de agenda. Os links de contato abrem uma conversa externa no WhatsApp e o sinal exibido no orçamento é sempre 20%.
