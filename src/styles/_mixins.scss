@@ -1,0 +1,2 @@
+@mixin soft-card { background: rgba(255, 253, 251, .88); border: 1px solid var(--line); box-shadow: var(--shadow-card); }
+@mixin circle-button { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 50%; background: var(--white); cursor: pointer; transition: .25s ease; }
