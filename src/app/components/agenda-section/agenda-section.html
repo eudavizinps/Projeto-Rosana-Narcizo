@@ -1,0 +1,5 @@
+<section class="section agenda-section">
+  <div class="section-lead compact-lead"><span class="eyebrow">Agenda</span><h2>Agenda da<br />empresa</h2><p>Organização que garante pontualidade e excelência em cada atendimento.</p></div>
+  <div class="agenda-board"><div class="agenda-sidebar"><span class="mini-brand">RN</span><b>Agenda · Junho</b><a class="active">Agendamentos</a><a>Procedimentos</a><a>Noivas</a><a>Eventos</a><a>Bloqueados</a></div><div class="agenda-grid">@for (day of days; track day.day) {<div class="agenda-day"><h3>{{ day.day }}</h3>@for (event of day.events; track event[0]) {<article><small>{{ event[0] }}</small><b>{{ event[1] }}</b></article>}</div>}</div></div>
+  <div class="phone-mockup"><div class="phone-notch"></div><span class="phone-time">09:45</span><small>Quinta-feira, 19 de junho</small><div class="notification"><span>RN</span><p><b>Novo agendamento recebido! 🎉</b><small>Noiva · Juliana às 16:00<br />Local: São Paulo · SP</small></p></div></div>
+</section>
