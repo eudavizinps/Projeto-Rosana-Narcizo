@@ -1,0 +1,29 @@
+<section id="inicio" class="hero" (mouseenter)="paused.set(true)" (mouseleave)="paused.set(false)">
+  <div class="hero-shell organic-shell">
+    <div class="hero-copy">
+      <span class="eyebrow">{{ slides[current()].eyebrow }}</span>
+      <h1>{{ slides[current()].title }}</h1>
+      <p>{{ slides[current()].description }}</p>
+      <div class="hero-actions"><a class="button" href="#orcamento">Agendar agora <span>→</span></a><a class="button button-outline" href="#contato">Fale conosco <span>◌</span></a></div>
+      <div class="carousel-controls" aria-label="Controles do carrossel">
+        <button type="button" (click)="previous()" aria-label="Slide anterior">←</button>
+        <div class="dots">@for (slide of slides; track slide.title; let index = $index) {<button type="button" [class.active]="index === current()" (click)="goTo(index)" [attr.aria-label]="'Ir para slide ' + (index + 1)"></button>}</div>
+        <button type="button" (click)="next()" aria-label="Próximo slide">→</button>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      @for (slide of slides; track slide.image; let index = $index) {<img class="hero-image" [class.active]="index === current()" [src]="slide.image" [alt]="slide.eyebrow" />}
+      <span class="hero-spark">✦</span>
+    </div>
+    <form id="orcamento" class="budget-card" (submit)="$event.preventDefault()">
+      <p class="budget-title"><span>✦</span> Faça seu orçamento <span>✦</span></p>
+      <label>Serviço<select aria-label="Serviço"><option>Selecione o serviço</option><option>Maquiagem</option><option>Penteado</option><option>Produção completa</option></select></label>
+      <label>Data do evento <input type="date" aria-label="Data do evento" /></label>
+      <label>Local <input type="text" placeholder="Informe o local" /></label>
+      <label>Nº de pessoas <input type="number" min="1" value="1" /></label>
+      <div class="estimate"><small>Valor estimado</small><strong>R$ 1.890,00</strong><span>Sinal de 20%: R$ 378,00</span></div>
+      <p class="microcopy">◉ Sinal de 20% para confirmação da reserva</p>
+    </form>
+  </div>
+  <div class="trust-strip"><span>⌂ <b>Atendimento</b> em domicílio</span><span>▣ <b>Sinal de</b> 20%</span><span>♚ <b>Equipe</b> especializada</span><span>◎ <b>Orçamento</b> visual imediato</span></div>
+</section>
