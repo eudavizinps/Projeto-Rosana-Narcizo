@@ -1,0 +1,6 @@
+<section id="servicos" class="section services-section">
+  <div class="section-lead compact-lead"><span class="eyebrow">Diferenciais RN</span><h2>Nossos<br />Diferenciais</h2><p>Mais que serviços, uma experiência completa pensada para você.</p><a class="text-link" href="#sobre">Conheça como é diferente →</a></div>
+  <div class="service-grid">
+    @for (service of services; track service[1]) {<article class="service-card"><span class="service-icon">{{ service[0] }}</span><h3>{{ service[1] }}</h3><p>{{ service[2] }}</p></article>}
+  </div>
+</section>
