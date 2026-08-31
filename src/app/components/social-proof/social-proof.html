@@ -1,0 +1,8 @@
+<section id="depoimentos" class="section testimonials-section">
+  <div class="section-lead compact-lead"><span class="eyebrow">Depoimentos</span><h2>Palavras que<br />nos inspiram</h2></div>
+  <div class="testimonial-grid">@for (item of testimonials; track item[0]) {<article class="testimonial-card"><span class="quote">“</span><p>{{ item[2] }}</p><div class="testimonial-person"><span>{{ item[0][0] }}</span><div><b>{{ item[0] }}</b><small>{{ item[1] }} · ★★★★★</small></div></div></article>}</div>
+</section>
+<section id="faq" class="section faq-section">
+  <div><span class="eyebrow">FAQ</span><h2>Tire suas dúvidas</h2><p>As respostas abaixo são demonstrativas nesta primeira etapa.</p></div>
+  <div class="faq-list">@for (item of faqs; track item[0]; let index = $index) {<article [class.open]="openFaq() === index"><button type="button" (click)="toggle(index)"><span>{{ item[0] }}</span><b>{{ openFaq() === index ? '−' : '+' }}</b></button>@if (openFaq() === index) {<p>{{ item[1] }}</p>}</article>}</div>
+</section>

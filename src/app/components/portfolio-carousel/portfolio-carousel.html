@@ -1,0 +1,4 @@
+<section id="portfolio" class="section portfolio-section">
+  <div class="portfolio-copy"><span class="eyebrow">Portfólio</span><h2>Beleza real,<br />momentos reais</h2><p>Cada detalhe conta uma história única.</p><div class="category-list" aria-label="Filtrar portfólio">@for (category of categories; track category) {<button type="button" [class.active]="category === activeCategory()" (click)="activeCategory.set(category)">{{ category }}</button>}</div></div>
+  <div class="portfolio-gallery"><div class="portfolio-track">@for (item of filteredItems(); track item.title) {<figure><img [src]="item.image" [alt]="item.title" /><figcaption><small>{{ item.category }}</small>{{ item.title }}</figcaption></figure>}</div><div class="portfolio-arrows"><button (click)="scroll(-1)" aria-label="Voltar">←</button><button (click)="scroll(1)" aria-label="Avançar">→</button></div></div>
+</section>
