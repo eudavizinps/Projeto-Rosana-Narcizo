@@ -1,5 +1,10 @@
 # Rosana Narcizo — frontend Angular
 
+[**Ver demonstração online ↗**](https://projeto-rosana-narcizo.pages.dev/)
+
+![Prévia da página inicial em desktop](./preview-desktop.png)
+
+
 Página inicial responsiva de Rosana Narcizo, criada em Angular 22, TypeScript, HTML5 e SCSS. Esta primeira etapa é predominantemente visual: orçamento, agenda, pagamentos e depoimentos usam dados demonstrativos; os links de contato abrem uma conversa externa no WhatsApp.
 
 ## Requisitos
