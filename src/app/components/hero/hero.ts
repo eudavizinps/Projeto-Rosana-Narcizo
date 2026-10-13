@@ -54,11 +54,11 @@ export class HeroComponent implements OnInit, OnDestroy {
   }
 
   next(): void {
-    this.current.update((value) => (value + 1) % this.slides.length);
+    this.current.update((value: number) => (value + 1) % this.slides.length);
   }
 
   previous(): void {
-    this.current.update((value) => (value - 1 + this.slides.length) % this.slides.length);
+    this.current.update((value: number) => (value - 1 + this.slides.length) % this.slides.length);
   }
 
   goTo(index: number): void {
