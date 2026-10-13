@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit, signal } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit, inject, signal } from '@angular/core';
+import { BudgetModalService } from '../../budget-modal.service';
 import { FormsModule } from '@angular/forms';
 
 interface HeroSlide {
@@ -14,7 +15,12 @@ interface HeroSlide {
   templateUrl: './hero.html'
 })
 export class HeroComponent implements OnInit, OnDestroy {
+  readonly budget = inject(BudgetModalService);
   readonly current = signal(0);
+
+  @HostListener('document:keydown.escape')
+  onEscape(): void { this.budget.close(); }
+
   readonly paused = signal(false);
   private timer?: ReturnType<typeof setInterval>;
 

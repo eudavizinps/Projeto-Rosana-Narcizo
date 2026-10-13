@@ -699,3 +699,11 @@ main { display: block; overflow: visible; }
     mask-image: linear-gradient(to right, transparent 32%, #000 46%, #000 62%, transparent 78%), linear-gradient(to bottom, #000 80%, transparent 100%);
   }
 }
+
+/* Orçamento em modal (abre pelo botão Reservar data) */
+.budget-modal { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 20px; background: rgba(43, 34, 32, 0.45); backdrop-filter: blur(3px); overflow-y: auto; }
+.budget-modal .hero-budget-wrap { grid-column: auto !important; width: min(440px, 100%) !important; max-width: 440px !important; margin: 0 !important; position: relative; }
+.budget-modal .botanical-branch, .budget-modal .sparkle-star { display: none; }
+.budget-modal .budget-card { background: #fffdfb; }
+.budget-close { position: absolute; top: 10px; right: 14px; z-index: 5; width: 34px; height: 34px; border: 0; border-radius: 50%; background: transparent; color: var(--rose-dark); font-size: 1.7rem; line-height: 1; cursor: pointer; }
+.budget-close:hover { background: rgba(200, 140, 122, 0.15); }
