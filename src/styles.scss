@@ -200,24 +200,37 @@ main { display: block; overflow: visible; }
   background: var(--rose);
 }
 
-/* Área Central - Carrossel Amplo e de Destaque */
+/* Área Central - Carrossel Amplo e de Destaque Aberto (Conforme Protótipo) */
 .hero-visual {
   position: relative;
-  height: 660px;
+  height: 680px;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 3;
 }
 
+.hero-curve-accent {
+  position: absolute;
+  left: -20px;
+  top: 15px;
+  width: 520px;
+  height: 620px;
+  background: radial-gradient(circle at 35% 45%, rgba(246, 228, 220, 0.85) 0%, rgba(255, 248, 244, 0.7) 65%, transparent 100%);
+  border-radius: 55% 45% 40% 50% / 60% 55% 45% 40%;
+  pointer-events: none;
+  z-index: 1;
+}
+
 .hero-image-stage {
   position: relative;
   width: 100%;
-  max-width: 530px;
-  height: 650px;
+  max-width: 620px;
+  height: 680px;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 
 .hero-image {
@@ -227,12 +240,13 @@ main { display: block; overflow: visible; }
   height: 100%;
   object-fit: cover;
   object-position: center top;
-  border-radius: 260px 260px 200px 200px;
+  border-radius: 0;
   opacity: 0;
   transform: scale(1.02);
   transition: opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1), transform 1.1s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: contrast(0.98) saturate(0.96);
-  box-shadow: 0 16px 45px rgba(115, 65, 50, 0.14);
+  filter: contrast(0.99) saturate(0.98);
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
 }
 
 .hero-image.active {
