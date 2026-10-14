@@ -25,14 +25,20 @@
       </div>
 
       <!-- Indicadores Minimalistas de Slides (Sem atrapalhar o texto) -->
-      <div class="hero-indicators" aria-label="Indicadores dos slides">
-        @for (slide of slides; track slide.title; let index = $index) {
-          <button type="button" 
-                  [class.active]="index === current()" 
-                  (click)="goTo(index)" 
-                  [attr.aria-label]="'Ir para slide ' + (index + 1)">
-          </button>
-        }
+      <div class="hero-controls">
+        <div class="hero-indicators" aria-label="Indicadores dos slides">
+          @for (slide of slides; track slide.title; let index = $index) {
+            <button type="button"
+                    [class.active]="index === current()"
+                    (click)="goTo(index)"
+                    [attr.aria-label]="'Ir para slide ' + (index + 1)">
+            </button>
+          }
+        </div>
+        <div class="hero-navigation" aria-label="Navegação do carrossel">
+          <button type="button" class="hero-nav-arrow" (click)="previous()" aria-label="Slide anterior">‹</button>
+          <button type="button" class="hero-nav-arrow" (click)="next()" aria-label="Próximo slide">›</button>
+        </div>
       </div>
     </div>
 
@@ -50,9 +56,6 @@
                [src]="slide.image" 
                [alt]="slide.eyebrow" />
         }
-        <!-- Setas de navegação discretas no hover -->
-        <button type="button" class="hero-nav-arrow prev" (click)="previous()" aria-label="Slide anterior">‹</button>
-        <button type="button" class="hero-nav-arrow next" (click)="next()" aria-label="Próximo slide">›</button>
       </div>
     </div>
 
