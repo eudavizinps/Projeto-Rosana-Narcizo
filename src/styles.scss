@@ -254,6 +254,8 @@ main { display: block; overflow: visible; }
   transform: scale(1);
 }
 
+.hero-image-backdrop { display: none; }
+
 .hero-nav-arrow {
   position: absolute;
   top: 50%;
@@ -767,8 +769,34 @@ main { display: block; overflow: visible; }
     padding: clamp(68px, 9svh, 88px) 0 18px;
   }
   .hero-shell { min-height: var(--hero-h); grid-template-columns: minmax(0, 500px) 1fr; }
-  .hero-image-stage { inset: 0; height: var(--hero-h); }
-  .hero-image { height: 100%; margin-left: calc(var(--hero-h) * -0.4445); }
+  .hero-visual { left: calc(50% - 50vw); width: 100vw; }
+  .hero-image-stage { inset: 0; height: var(--hero-h); overflow: hidden; }
+  .hero-image-backdrop {
+    display: block;
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: 68%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 28%;
+    opacity: 0;
+    filter: blur(32px) saturate(.78);
+    transform: scale(1.08);
+    transition: opacity .85s ease;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 28%), linear-gradient(to bottom, #000 72%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 28%), linear-gradient(to bottom, #000 72%, transparent);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+  }
+  .hero-image-backdrop.active { opacity: .48; }
+  .hero-image {
+    inset: 0 5% 0 auto;
+    height: 100%;
+    width: auto;
+    margin-left: 0;
+    transform-origin: center;
+  }
+  .hero-image.active { transform: scale(1.12); }
   .hero-copy h1 { font-size: clamp(2.6rem, min(4vw, 8svh), 4.25rem); margin-bottom: 16px; }
   .hero-copy > p { margin-bottom: 20px; }
   .hero-indicators { margin-top: 20px; }
