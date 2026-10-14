@@ -756,3 +756,22 @@ main { display: block; overflow: visible; }
     mask-image: radial-gradient(ellipse 60% 58% at 50% 44%, #000 62%, transparent 100%);
   }
 }
+
+/* Hero adaptável à altura da janela (notebooks, zoom 125%/150%, telas baixas) */
+@media (min-width: 1100px) {
+  .hero { --hero-h: clamp(540px, calc(100svh - 150px), 704px); min-height: calc(var(--hero-h) + 145px); padding: 100px 0 30px; }
+  .hero-shell { min-height: var(--hero-h); }
+  .hero-image-stage { inset: 90px 0 auto; height: var(--hero-h); }
+  .hero-image { height: 100%; margin-left: calc(var(--hero-h) * -0.4445); }
+  .hero-copy h1 { font-size: clamp(2.7rem, min(4.3vw, 9.5svh), 4.75rem); margin-bottom: 18px; }
+  .hero-copy > p { margin-bottom: 24px; }
+}
+@media (min-width: 1100px) and (max-height: 700px) {
+  .hero-copy > p { font-size: 0.9rem; line-height: 1.6; }
+  .hero-indicators { margin-top: 18px; }
+}
+
+@media (min-width: 1100px) {
+  .hero { --hero-h: clamp(500px, calc(100svh - 150px), 704px); }
+  .hero-shell { grid-template-columns: minmax(400px, 500px) 1fr; }
+}
