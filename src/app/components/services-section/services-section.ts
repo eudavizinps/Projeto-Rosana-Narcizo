@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
-@Component({ selector: 'app-services-section', templateUrl: './services-section.html' })
+@Component({ selector: 'app-services-section', imports: [RouterLink], templateUrl: './services-section.html' })
 export class ServicesSectionComponent {
   readonly services = [
     ['♙', 'Atendimento Personalizado', 'Escutamos você para criar o visual que tem a sua cara.'],

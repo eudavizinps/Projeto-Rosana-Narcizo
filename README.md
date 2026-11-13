@@ -5,7 +5,7 @@
 ![Prévia da página inicial em desktop](./preview-desktop.png)
 
 
-Página inicial responsiva de Rosana Narcizo, criada em Angular 22, TypeScript, HTML5 e SCSS. Esta primeira etapa é predominantemente visual: orçamento, agenda, pagamentos e depoimentos usam dados demonstrativos; os links de contato abrem uma conversa externa no WhatsApp.
+Site responsivo de Rosana Narcizo, criado em Angular 22, TypeScript, HTML5 e SCSS. A navegação tem páginas próprias para início, serviços, portfólio, noivas, sobre, depoimentos, FAQ e contato. Esta etapa é predominantemente visual: orçamento, agenda, pagamentos e depoimentos usam dados demonstrativos; os links de contato abrem uma conversa externa no WhatsApp.
 
 ## Requisitos
 
@@ -41,6 +41,8 @@ O resultado otimizado é gravado em `dist/rosana-narcizo/browser/`.
 ## Organização
 
 - `src/app/components/`: componentes visuais da página inicial
+- `src/app/pages/`: composição das páginas e conteúdo específico de cada rota
+- `public/_redirects`: fallback para abrir páginas internas diretamente no Cloudflare Pages
 - `src/styles/`: variáveis, tipografia, reset e mixins
 - `src/assets/images/hero/`: imagens do carrossel principal
 - `src/assets/images/portfolio/`: imagens demonstrativas do portfólio

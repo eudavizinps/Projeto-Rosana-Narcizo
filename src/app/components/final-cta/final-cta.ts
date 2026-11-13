@@ -1,7 +1,5 @@
-import { Component, inject } from '@angular/core';
-import { BudgetModalService } from '../../budget-modal.service';
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
-@Component({ selector: 'app-final-cta', templateUrl: './final-cta.html' })
-export class FinalCtaComponent {
-  readonly budget = inject(BudgetModalService);
-}
+@Component({ selector: 'app-final-cta', imports: [RouterLink], templateUrl: './final-cta.html' })
+export class FinalCtaComponent {}

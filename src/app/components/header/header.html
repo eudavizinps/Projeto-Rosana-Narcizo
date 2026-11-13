@@ -1,13 +1,13 @@
 <header class="site-header" [class.is-scrolled]="scrolled()">
-  <a class="brand" href="#inicio" aria-label="Rosana Narcizo - início">
+  <a class="brand" routerLink="/" aria-label="Rosana Narcizo - início">
     <span class="brand-mark">RN</span>
     <span class="brand-copy"><strong>Rosana Narcizo</strong><small>Beleza & Maquiagem</small></span>
   </a>
   <button class="menu-toggle" type="button" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen()" aria-label="Abrir menu"><span></span><span></span><span></span></button>
   <nav [class.open]="menuOpen()" aria-label="Navegação principal">
-    <a href="#inicio" (click)="closeMenu()">Início</a><a href="#servicos" (click)="closeMenu()">Serviços</a><a href="#portfolio" (click)="closeMenu()">Portfólio</a><a href="#noivas" (click)="closeMenu()">Noivas</a><a href="#sobre" (click)="closeMenu()">Sobre</a><a href="#depoimentos" (click)="closeMenu()">Depoimentos</a><a href="#faq" (click)="closeMenu()">FAQ</a><a href="#contato" (click)="closeMenu()">Contato</a>
+    <a routerLink="/" routerLinkActive="current" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Início</a><a routerLink="/servicos" routerLinkActive="current" (click)="closeMenu()">Serviços</a><a routerLink="/portfolio" routerLinkActive="current" (click)="closeMenu()">Portfólio</a><a routerLink="/noivas" routerLinkActive="current" (click)="closeMenu()">Noivas</a><a routerLink="/sobre" routerLinkActive="current" (click)="closeMenu()">Sobre</a><a routerLink="/depoimentos" routerLinkActive="current" (click)="closeMenu()">Depoimentos</a><a routerLink="/faq" routerLinkActive="current" (click)="closeMenu()">FAQ</a><a routerLink="/contato" routerLinkActive="current" (click)="closeMenu()">Contato</a>
   </nav>
-  <a class="button button-small header-cta" href="#orcamento" (click)="$event.preventDefault(); closeMenu(); budget.open()">
+  <a class="button button-small header-cta" routerLink="/contato" (click)="closeMenu()">
     <svg class="header-cal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
       <rect x="3" y="4" width="18" height="18" rx="2"/>
       <line x1="16" y1="2" x2="16" y2="6"/>

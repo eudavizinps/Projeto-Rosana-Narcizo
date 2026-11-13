@@ -1,7 +1,9 @@
-import { Component, signal } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 
 @Component({ selector: 'app-social-proof', templateUrl: './social-proof.html' })
 export class SocialProofComponent {
+  readonly showTestimonials = input(true);
+  readonly showFaq = input(true);
   readonly openFaq = signal<number | null>(0);
   readonly testimonials = [
     ['Juliana P.', 'Noiva · demonstração', 'A equipe transformou tudo! Me senti linda, segura e acolhida do início ao fim.'],
