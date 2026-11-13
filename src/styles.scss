@@ -908,3 +908,157 @@ main { display: block; overflow: visible; }
   .bride-feature img { max-height: 430px; margin-bottom: 30px; }
   .contact-panel + .contact-panel { margin-top: 18px; }
 }
+
+/* Escala final de layout e tipografia em todas as rotas. */
+:root { --page: min(1280px, calc(100% - clamp(32px, 6vw, 96px))); }
+.section { max-width: 100%; }
+.site-header { gap: clamp(12px, 1.5vw, 24px); }
+.site-header nav { font-size: .78rem; }
+.compact-lead h2 { font-size: clamp(2.2rem, 3vw, 3.35rem); line-height: 1.04; }
+.page-intro h1 { font-size: clamp(2.7rem, 4vw, 4.2rem); }
+.home-discover h2,
+.bride-feature h2,
+.contact-panel h2 { font-size: clamp(2.2rem, 3.2vw, 3.5rem); }
+.final-cta h2 { font-size: clamp(2rem, 2.7vw, 2.75rem); }
+.service-card p,
+.process-step p,
+.card-panel li,
+.payment-option,
+.testimonial-card > p,
+.faq-list button,
+.faq-list article > p { font-size: clamp(.76rem, .8vw, .88rem); }
+.service-card h3 { font-size: 1.15rem; }
+.process-step h3 { font-size: .82rem; }
+.trust-item,
+.compact-lead p,
+.portfolio-copy > p,
+.about-copy > p:not(.script),
+.agenda-sidebar,
+.agenda-day h3,
+.agenda-day small,
+.agenda-day b,
+.notification p,
+.testimonial-person b,
+.testimonial-person small { font-size: .78rem; }
+.budget-card input,
+.budget-card select { font-size: .85rem; }
+.field-title,
+.microcopy,
+.portfolio-track figcaption small,
+.about-values b,
+.average-price small,
+.average-price span { font-size: .72rem; }
+.site-footer { font-size: .76rem; }
+.site-footer .footer-note { font-size: .7rem; }
+
+@media (min-width: 1100px) {
+  .hero-copy h1 { font-size: clamp(2.65rem, 3.05vw, 3.65rem); }
+  .hero-copy > p { font-size: .9rem; line-height: 1.6; }
+  .hero { --hero-h: clamp(490px, calc(100svh - 185px), 660px); }
+  .hero-image-stage { height: var(--hero-h); }
+  .services-section,
+  .portfolio-section,
+  .about-section,
+  .agenda-section { padding-block: 60px; }
+  .process-section,
+  .testimonials-section { padding-block: 50px; }
+  .service-card { min-height: 235px; padding: 24px 13px 20px; }
+  .portfolio-track figure,
+  .portfolio-track figure:nth-child(2n) { height: 280px; }
+}
+
+@media (max-width: 1099px) {
+  .site-header { gap: 14px; }
+  .hero-shell { min-height: 0; }
+  .hero-copy { width: 100%; max-width: 100%; }
+  .hero-copy h1 { max-width: 700px; font-size: clamp(2.6rem, 5vw, 3.7rem); line-height: 1.05; }
+  .hero-copy > p { max-width: 600px; font-size: .93rem; }
+  .hero-visual { height: clamp(340px, 50vw, 470px); }
+  .hero-image-stage { height: 100%; max-width: 410px; }
+  .services-section,
+  .process-section,
+  .portfolio-section,
+  .about-section,
+  .agenda-section,
+  .testimonials-section,
+  .faq-section { padding-block: 54px; }
+  .service-card { min-height: 190px; }
+  .portfolio-track figure,
+  .portfolio-track figure:nth-child(2n) { height: 280px; }
+}
+
+@media (min-width: 821px) and (max-width: 1099px) {
+  .hero { padding-top: 92px; }
+  .hero-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 24px;
+    align-items: center;
+    text-align: left;
+  }
+  .hero-copy { padding: 20px 0; }
+  .hero-copy h1 { max-width: 100%; margin-inline: 0; font-size: clamp(2.55rem, 4.1vw, 3.1rem); }
+  .hero-copy > p { max-width: 100%; margin-inline: 0; font-size: .88rem; }
+  .hero-actions,
+  .hero-controls { justify-content: flex-start; }
+  .hero-visual { height: 440px; margin-top: 0; }
+  .hero-image-stage { height: 100%; max-width: 100%; }
+  .trust-strip { margin-top: 10px; }
+}
+
+@media (max-width: 820px) {
+  .hero-copy { padding-top: 30px; }
+  .hero-copy h1 { margin-inline: auto; font-size: clamp(2.45rem, 7.4vw, 3.4rem); }
+  .hero-copy > p { margin-inline: auto; }
+  .about-photo { width: min(330px, 85%); }
+  .final-cta { gap: 14px; }
+}
+
+@media (max-width: 520px) {
+  :root { --page: calc(100% - 32px); }
+  body { font-size: 14px; }
+  .site-header { padding-inline: 16px; }
+  .hero { padding-top: 74px; }
+  .hero-copy { padding: 24px 0 12px; }
+  .hero-copy h1 { max-width: 100%; font-size: clamp(2.15rem, 9.4vw, 2.85rem); line-height: 1.04; overflow-wrap: normal; }
+  .hero-copy > p { max-width: 100%; font-size: .9rem; line-height: 1.55; }
+  .hero-actions { gap: 10px; }
+  .hero-controls { margin-top: 18px; }
+  .hero-visual { height: clamp(280px, 83vw, 370px); margin-top: 0; }
+  .hero-image-stage { max-width: 330px; }
+  .trust-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 12px; }
+  .trust-item { min-height: 64px; padding: 10px; border-bottom: 1px solid var(--line); font-size: .72rem; }
+  .trust-item:nth-child(2) { border-right: 0; }
+  .trust-item:nth-child(3) { border-bottom: 0; }
+  .trust-icon { flex: none; }
+  .services-section,
+  .process-section,
+  .portfolio-section,
+  .about-section,
+  .agenda-section,
+  .testimonials-section,
+  .faq-section { padding-block: 42px; }
+  .compact-lead h2,
+  .portfolio-copy h2,
+  .about-copy h2 { font-size: clamp(2.15rem, 8vw, 2.8rem); }
+  .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .service-card { min-height: 0; padding: 18px 12px; }
+  .service-icon { width: 42px; height: 42px; margin-bottom: 10px; font-size: 1.35rem; }
+  .service-card h3 { min-height: 0; margin-bottom: 8px; font-size: 1.05rem; }
+  .service-card p { font-size: .75rem; }
+  .about-photo { width: min(290px, 85%); }
+  .page-intro { padding: 105px 0 20px; }
+  .page-intro h1 { font-size: clamp(2.3rem, 9vw, 3rem); }
+  .home-discover { padding-block: 35px 55px; }
+  .contact-panel { padding: 24px; }
+  .final-cta { min-height: 0; padding: 26px 20px; margin-bottom: 40px; }
+  .final-cta h2 { font-size: 2rem; }
+}
+
+@media (max-width: 370px) {
+  :root { --page: calc(100% - 24px); }
+  .service-grid { grid-template-columns: 1fr; }
+  .trust-strip { grid-template-columns: 1fr; }
+  .trust-item { border-right: 0; }
+  .hero-copy h1 { font-size: 2.1rem; }
+}
