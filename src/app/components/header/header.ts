@@ -1,8 +1,10 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, HostListener, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { BudgetModalService } from '../../budget-modal.service';
 
 @Component({ selector: 'app-header', imports: [RouterLink, RouterLinkActive], templateUrl: './header.html' })
 export class HeaderComponent {
+  readonly budget = inject(BudgetModalService);
   readonly menuOpen = signal(false);
   readonly scrolled = signal(false);
 

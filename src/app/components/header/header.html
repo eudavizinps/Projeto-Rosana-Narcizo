@@ -7,13 +7,13 @@
   <nav [class.open]="menuOpen()" aria-label="Navegação principal">
     <a routerLink="/" routerLinkActive="current" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Início</a><a routerLink="/servicos" routerLinkActive="current" (click)="closeMenu()">Serviços</a><a routerLink="/portfolio" routerLinkActive="current" (click)="closeMenu()">Portfólio</a><a routerLink="/noivas" routerLinkActive="current" (click)="closeMenu()">Noivas</a><a routerLink="/sobre" routerLinkActive="current" (click)="closeMenu()">Sobre</a><a routerLink="/depoimentos" routerLinkActive="current" (click)="closeMenu()">Depoimentos</a><a routerLink="/faq" routerLinkActive="current" (click)="closeMenu()">FAQ</a><a routerLink="/contato" routerLinkActive="current" (click)="closeMenu()">Contato</a>
   </nav>
-  <a class="button button-small header-cta" routerLink="/contato" (click)="closeMenu()">
+  <button type="button" class="button button-small header-cta" (click)="closeMenu(); budget.open()" aria-label="Reservar data">
     <svg class="header-cal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
       <rect x="3" y="4" width="18" height="18" rx="2"/>
       <line x1="16" y1="2" x2="16" y2="6"/>
       <line x1="8" y1="2" x2="8" y2="6"/>
       <line x1="3" y1="10" x2="21" y2="10"/>
     </svg>
-    Reservar data
-  </a>
+    <span class="header-cta-label">Reservar data</span>
+  </button>
 </header>

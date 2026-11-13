@@ -30,4 +30,21 @@ describe('App', () => {
     fixture.detectChanges();
     expect((fixture.nativeElement as HTMLElement).querySelector('h1')?.textContent).toContain('Portfólio');
   });
+
+  it('opens the budget from the header on an inner page', async () => {
+    const fixture = TestBed.createComponent(App);
+    await TestBed.inject(Router).navigateByUrl('/portfolio');
+    await fixture.whenStable();
+    fixture.detectChanges();
+    const page = fixture.nativeElement as HTMLElement;
+    expect(page.querySelector('[role="dialog"]')).toBeNull();
+    (page.querySelector('.header-cta') as HTMLButtonElement).click();
+    await fixture.whenStable();
+    fixture.detectChanges();
+    expect(page.querySelector('[role="dialog"]')).not.toBeNull();
+    (page.querySelector('.budget-close') as HTMLButtonElement).click();
+    await fixture.whenStable();
+    fixture.detectChanges();
+    expect(page.querySelector('[role="dialog"]')).toBeNull();
+  });
 });

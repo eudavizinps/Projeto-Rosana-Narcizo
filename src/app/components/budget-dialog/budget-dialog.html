@@ -1,0 +1,80 @@
+@if (budget.isOpen()) {
+    <!-- Direita: Card de Orçamento com Ramo Floral e Ícones -->
+    <div class="budget-modal" (click)="budget.close()">
+    <div class="hero-budget-wrap" (click)="$event.stopPropagation()" role="dialog" aria-modal="true" aria-label="Faça seu orçamento">
+      <button #closeButton type="button" class="budget-close" (click)="budget.close()" aria-label="Fechar orçamento">×</button>
+      <svg class="botanical-branch" viewBox="0 0 160 300" fill="none" stroke="currentColor" aria-hidden="true">
+        <path d="M80 280 C75 220, 85 130, 95 15" stroke-width="1.3" stroke="rgba(202, 142, 126, 0.4)"/>
+        <path d="M83 220 C60 205, 42 210, 36 195 C50 188, 70 200, 84 214" stroke-width="1.1" fill="rgba(247, 227, 220, 0.35)" stroke="rgba(202, 142, 126, 0.45)"/>
+        <path d="M87 170 C108 152, 125 158, 130 142 C116 136, 96 148, 86 164" stroke-width="1.1" fill="rgba(247, 227, 220, 0.35)" stroke="rgba(202, 142, 126, 0.45)"/>
+        <path d="M89 115 C68 98, 52 104, 46 88 C60 82, 80 94, 90 109" stroke-width="1.1" fill="rgba(247, 227, 220, 0.35)" stroke="rgba(202, 142, 126, 0.45)"/>
+        <path d="M92 68 C110 54, 122 58, 125 44 C112 40, 98 48, 91 62" stroke-width="1.1" fill="rgba(247, 227, 220, 0.35)" stroke="rgba(202, 142, 126, 0.45)"/>
+        <path d="M95 15 C92 7, 96 3, 97 0" stroke-width="1.1" stroke="rgba(202, 142, 126, 0.45)"/>
+      </svg>
+      <span class="sparkle-star" aria-hidden="true">✦</span>
+
+      <form id="orcamento" class="budget-card" (submit)="$event.preventDefault()">
+        <p class="budget-title"><span>✦</span> Faça seu orçamento <span>✦</span></p>
+
+        <label>
+          <span class="field-title">
+            <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="9" r="6"/><path d="M12 15v6m-4 0h8"/>
+            </svg>
+            Serviço
+          </span>
+          <select aria-label="Serviço">
+            <option>Selecione o serviço</option>
+            <option>Maquiagem</option>
+            <option>Penteado</option>
+            <option>Produção completa para noiva</option>
+            <option>Madrinhas & Convidadas</option>
+          </select>
+        </label>
+
+        <label>
+          <span class="field-title">
+            <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            Data do evento
+          </span>
+          <input type="date" aria-label="Data do evento" />
+        </label>
+
+        <label>
+          <span class="field-title">
+            <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            Local
+          </span>
+          <input type="text" placeholder="Informe o local" />
+        </label>
+
+        <label>
+          <span class="field-title">
+            <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            Nº de pessoas
+          </span>
+          <input type="number" min="1" value="1" placeholder="Quantidade de pessoas" />
+        </label>
+
+        <div class="estimate">
+          <small>Valor estimado</small>
+          <strong>R$ 1.890,00</strong>
+          <span>Sinal de 30%: R$ 567,00</span>
+        </div>
+
+        <p class="microcopy">
+          <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>
+          </svg>
+          Sinal de 30% para confirmação da reserva
+        </p>
+      </form>
+    </div>
+    </div>
+}
