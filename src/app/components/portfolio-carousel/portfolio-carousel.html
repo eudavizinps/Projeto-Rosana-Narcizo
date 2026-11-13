@@ -1,4 +1,30 @@
-<section id="portfolio" class="section portfolio-section">
-  <div class="portfolio-copy"><span class="eyebrow">Portfólio</span><h2>Beleza real,<br />momentos reais</h2><p>Cada detalhe conta uma história única.</p><button type="button" class="text-link portfolio-view-all" (click)="scroll(1)">Ver portfólio completo <span aria-hidden="true">→</span></button></div>
-  <div class="portfolio-gallery"><div class="portfolio-track">@for (item of filteredItems(); track item.title) {<figure><img [src]="item.image" [alt]="item.title" /><figcaption><small>{{ item.category }}</small>{{ item.title }}</figcaption></figure>}</div><div class="portfolio-arrows"><button (click)="scroll(-1)" aria-label="Voltar">←</button><button (click)="scroll(1)" aria-label="Avançar">→</button></div></div>
+<section id="portfolio" class="section portfolio-showcase" aria-label="Galeria de produções de beleza">
+  <div class="portfolio-showcase-intro">
+    <div>
+      <span class="eyebrow">Trabalhos selecionados</span>
+      <h2>Beleza real,<br />momentos reais</h2>
+      <p>Maquiagens e penteados criados para cada história.</p>
+    </div>
+    <p class="portfolio-count">{{ filteredItems().length }} produções</p>
+  </div>
+
+  <div class="portfolio-filters" role="group" aria-label="Filtrar produções">
+    @for (category of categories; track category) {
+      <button
+        type="button"
+        [class.active]="activeCategory() === category"
+        [attr.aria-pressed]="activeCategory() === category"
+        (click)="activeCategory.set(category)"
+      >{{ category }}</button>
+    }
+  </div>
+
+  <div class="portfolio-grid">
+    @for (item of filteredItems(); track item.image) {
+      <figure class="portfolio-card">
+        <img [src]="item.image" [alt]="item.alt" loading="lazy" decoding="async" />
+        <figcaption><small>{{ item.category }}</small><span>{{ item.title }}</span></figcaption>
+      </figure>
+    }
+  </div>
 </section>
