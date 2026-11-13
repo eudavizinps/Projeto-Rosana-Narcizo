@@ -60,9 +60,8 @@
     </div>
 
     <!-- Direita: Card de Orçamento com Ramo Floral e Ícones -->
-    @if (budget.isOpen()) {
-    <div class="budget-modal" (click)="budget.close()">
-    <div class="hero-budget-wrap" (click)="$event.stopPropagation()" role="dialog" aria-modal="true" aria-label="Faça seu orçamento">
+    <div class="hero-budget-container" [class.budget-modal]="budget.isOpen()" (click)="budget.close()">
+    <div class="hero-budget-wrap" (click)="$event.stopPropagation()" [attr.role]="budget.isOpen() ? 'dialog' : null" [attr.aria-modal]="budget.isOpen() ? 'true' : null" aria-label="Faça seu orçamento">
       <button type="button" class="budget-close" (click)="budget.close()" aria-label="Fechar orçamento">×</button>
       <svg class="botanical-branch" viewBox="0 0 160 300" fill="none" stroke="currentColor" aria-hidden="true">
         <path d="M80 280 C75 220, 85 130, 95 15" stroke-width="1.3" stroke="rgba(202, 142, 126, 0.4)"/>
@@ -126,7 +125,7 @@
         <div class="estimate">
           <small>Valor estimado</small>
           <strong>R$ 1.890,00</strong>
-          <span>Sinal de 30%: R$ 378,00</span>
+          <span>Sinal de 30%: R$ 567,00</span>
         </div>
 
         <p class="microcopy">
@@ -138,7 +137,6 @@
       </form>
     </div>
     </div>
-    }
   </div>
 
   <!-- Faixa de Benefícios / Trust Strip -->

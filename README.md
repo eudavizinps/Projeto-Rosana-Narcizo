@@ -49,4 +49,4 @@ O resultado otimizado é gravado em `dist/rosana-narcizo/browser/`.
 
 ## Escopo desta etapa
 
-Não há backend, autenticação, banco de dados, pagamentos, IA ou integração de agenda. Os links de contato abrem uma conversa externa no WhatsApp e o sinal exibido no orçamento é sempre 20%.
+Não há backend, autenticação, banco de dados, pagamentos, IA ou integração de agenda. Os links de contato abrem uma conversa externa no WhatsApp e o sinal demonstrativo exibido no orçamento é de 30%.
